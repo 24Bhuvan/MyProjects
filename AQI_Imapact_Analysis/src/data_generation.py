@@ -3,10 +3,10 @@ import pandas as pd
 
 def synthetic_data():
     np.random.seed(42)
-    data_range = pd.date_range(start = '2025-01-01', period = 60*24, freq = 'h')
+    data_range = pd.date_range(start = '2025-01-01', periods = 60*24, freq = 'h')
     aqi = np.random.normal(loc = 100, scale = 20, size = len(data_range))
     mode_data = {
-        'Bus': np.random.randint(20, 100, size=len(data_range)),
+        'Car': np.random.randint(20, 100, size=len(data_range)),
         'Bike': np.random.randint(5, 50, size=len(data_range)),
         'Walk': np.random.randint(10, 60, size=len(data_range)),
         'Public Transport': np.random.randint(50, 150, size=len(data_range))
@@ -15,7 +15,7 @@ def synthetic_data():
     data = pd.DataFrame({
         'Date': data_range,
         'AQI': np.round(aqi, 2),
-        'Bus Commuter Count': mode_data['Bus'],
+        'Car Commuter Count': mode_data['Bus'],
         'Bike Commuter Count': mode_data['Bike'],
         'Walk Commuter Count': mode_data['Walk'],
         'Public Transport Commuter Count': mode_data['Public Transport'],
