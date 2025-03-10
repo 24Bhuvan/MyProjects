@@ -15,7 +15,7 @@ def synthetic_data():
     data = pd.DataFrame({
         'Date': data_range,
         'AQI': np.round(aqi, 2),
-        'Car Commuter Count': mode_data['Bus'],
+        'Car Commuter Count': mode_data['Car'],
         'Bike Commuter Count': mode_data['Bike'],
         'Walk Commuter Count': mode_data['Walk'],
         'Public Transport Commuter Count': mode_data['Public Transport'],
