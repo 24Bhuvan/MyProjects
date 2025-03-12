@@ -1,8 +1,7 @@
 from scipy import stats
 import pandas as pd
 
-def perform_statistical_tests(data_path='synthetic_data.csv'):
-    data = pd.read_csv(data_path)
+def perform_statistical_tests(data:pd.DataFrame):
     high_aqi = data[data['AQI'] > 100]['Engagement Count']
     low_aqi = data[data['AQI'] <= 100]['Engagement Count']
     
