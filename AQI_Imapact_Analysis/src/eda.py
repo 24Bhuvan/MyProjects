@@ -2,14 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
-# Load the data (Assume 'data' is the DataFrame)
-from data_validation import cleaning_data
-from data_generation import synthetic_data
-
-data = synthetic_data()
-data = cleaning_data(data)
-
 def perform_eda(data:pd.DataFrame):
     print("\n Starting EDA...")
     print("\n Summary Statistics:")
@@ -47,5 +39,3 @@ def perform_eda(data:pd.DataFrame):
     plt.title('AQI vs. Public Engagement Over Time')
     plt.legend()
     plt.show()
-    
-perform_eda(data)
